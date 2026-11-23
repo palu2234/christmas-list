@@ -1,0 +1,45 @@
+# ─────────────────────────────────────────────────────────────
+#  MICHAEL'S CHRISTMAS LIST — edit this file to update the site
+# ─────────────────────────────────────────────────────────────
+#  To add an item, copy this block to the bottom and fill it in.
+#  Only "name" is required — delete any line you don't need.
+#
+#  - name: Item name
+#    store: Store name
+#    price: "$00.00"
+#    link: https://...
+#    image: https://...        (a web image URL, OR a file you uploaded: images/photo.jpg)
+#    details: Size, colour, model number, etc.
+#
+#  Tips:
+#   • Keep the two-space indent and the "- " at the start of each item.
+#   • Put quotes around prices (the $ sign can confuse the file otherwise).
+#   • To mark something as bought/claimed, add:   got: true
+# ─────────────────────────────────────────────────────────────
+
+- name: NOMA 3-Head LED Desk Lamp with Clamp
+  store: Canadian Tire
+  link: https://www.canadiantire.ca/en/pdp/noma-3-head-led-desk-lamp-with-clamp-0528929p.html
+  details: Clamp-on desk lamp with three adjustable LED heads.
+
+- name: WindRiver Original Fleece Quarter-Zip Mock Neck
+  store: Mark's
+  price: "$69.99"
+  link: https://www.marks.com/en/pdp/windriver-men-s-original-fleece-quarter-zip-mock-neck-comfort-fit-cotton-sweatshirt-78405021f.html
+  details: "Grey, size M. Style #2BDCWRAS-705."
+
+- name: Waffle Knit Crew Neck Sweater (Standard Fit)
+  store: American Eagle
+  price: "$54.95"
+  details: "Brown, size M. Tag 0172-2171, colour 200."
+
+- name: Nike Court Vision Low
+  store: Nike
+  price: "$85"
+  link: https://www.nike.com/t/court-vision-low-mens-shoes-FpEqIQ3A/HV0927-097
+  image: https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5736e1d7-d114-4ed2-9c98-1e9df9420318/NIKE+COURT+VISION+LO.png
+  details: "White / light grey with black swoosh (Grey Fog/White/Black, HV0927-097). Shoe size: ask me!"
+
+- name: Gift Cards
+  store: Best Buy, Amazon, Costco, or gas
+  details: Any amount — always appreciated.
