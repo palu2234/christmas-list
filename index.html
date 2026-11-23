@@ -1,0 +1,85 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title }}</title>
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:description" content="{{ site.description }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
+<style>
+  :root {
+    --bg: #f7f3ec; --card: #ffffff; --ink: #1f2a24; --muted: #6b746e;
+    --red: #b3262e; --green: #1f5c3f; --line: #e6dfd3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121614; --card: #1b201d; --ink: #eef1ee; --muted: #9aa39d; --line: #2a312d; --red: #e0565d; --green: #5fae86; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  header { text-align: center; padding: 48px 20px 24px; }
+  header h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 6px; color: var(--red); }
+  header p { margin: 0; color: var(--muted); }
+  main {
+    max-width: 1080px; margin: 0 auto; padding: 8px 20px 48px;
+    display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    overflow: hidden; display: flex; flex-direction: column;
+    text-decoration: none; color: inherit; transition: transform .15s, box-shadow .15s;
+  }
+  a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+  .photo { aspect-ratio: 1 / 1; background: #fff; display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .photo img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+  .photo .ph { font-size: 64px; opacity: .85; }
+  .body { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .store { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--green); font-weight: 600; }
+  .name { font-size: 1.05rem; font-weight: 650; margin: 0; }
+  .details { font-size: .9rem; color: var(--muted); margin: 0; }
+  .foot { margin-top: auto; padding-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+  .price { font-weight: 700; }
+  .go { font-size: .85rem; color: var(--red); font-weight: 600; }
+  .got { opacity: .45; }
+  .got .name { text-decoration: line-through; }
+  .badge { font-size: .75rem; background: var(--green); color: #fff; border-radius: 99px; padding: 2px 10px; }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 0 20px 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎄 {{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+</header>
+
+<main>
+{% for item in site.data.items %}
+  {% if item.link %}<a class="card{% if item.got %} got{% endif %}" href="{{ item.link }}" target="_blank" rel="noopener">{% else %}<div class="card{% if item.got %} got{% endif %}">{% endif %}
+    <div class="photo">
+      {% if item.image %}
+        <img src="{% if item.image contains '://' %}{{ item.image }}{% else %}{{ item.image | relative_url }}{% endif %}" alt="{{ item.name }}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph',textContent:'🎁'}))">
+      {% else %}
+        <span class="ph">🎁</span>
+      {% endif %}
+    </div>
+    <div class="body">
+      {% if item.store %}<div class="store">{{ item.store }}</div>{% endif %}
+      <h2 class="name">{{ item.name }}</h2>
+      {% if item.details %}<p class="details">{{ item.details }}</p>{% endif %}
+      <div class="foot">
+        <span class="price">{{ item.price }}</span>
+        {% if item.got %}<span class="badge">Got it ✓</span>{% elsif item.link %}<span class="go">View →</span>{% endif %}
+      </div>
+    </div>
+  {% if item.link %}</a>{% else %}</div>{% endif %}
+{% endfor %}
+</main>
+
+<footer>Prices in CAD and may have changed. Last updated {{ site.time | date: "%B %-d, %Y" }}.</footer>
+</body>
+</html>
