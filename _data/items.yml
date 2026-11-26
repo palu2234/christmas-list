@@ -44,6 +44,14 @@
   image: https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5736e1d7-d114-4ed2-9c98-1e9df9420318/NIKE+COURT+VISION+LO.png
   details: "White / light grey with black swoosh (Grey Fog/White/Black, HV0927-097). Shoe size: ask me!"
 
+- name: "lululemon ABC Slim-Fit Trouser 28\" Warpstreme"
+  store: "lululemon"
+  price: "$148"
+  link: "https://shop.lululemon.com/en-ca/p/abc-slim-trouser-28/kpvk47jgf1?color=32476"
+  image: ""
+  details: "Obsidian, 28\" length, waist size TBD"
+  got: false
+
 - name: Gift Cards
   store: Best Buy, Amazon, Costco, or gas
   details: Any amount — always appreciated.
